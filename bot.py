@@ -2,28 +2,23 @@ import discord
 import asyncio
 from discord.ext import commands
 
-token = '<Your bot's token!>'
+token = '<your token!>'
 bot = commands.Bot(command_prefix='kk!') # Setting bot prefix to 'kk!'
-
 # Send one dm!
 # Usage: 'kk!dm 0000000000000000 My Message To You!!'
 @bot.command()
 async def dm(ctx, userid: int,*, dm: str):
     boi = bot.get_user(userid)
-    iq = 0
-    if iq < 69:
-        await boi.send(dm)
+    await boi.send(dm)
     await ctx.send('DM send!')
 
 # Send endless dm's! 
 # Usage: 'kk!spam 00000000000000000 My Reapeated Message To You!!'
 @bot.command()
 async def spam(ctx, userid: int,*, dm: str):
-    iq = 0
-    while iq < 69:
+    while True:
         boi = bot.get_user(userid)
-        if iq < 5:
-            await boi.send(dm)
+        await boi.send(dm)
         await ctx.send('DM send!')
 
 # Help!!!!
@@ -54,6 +49,6 @@ async def nani(ctx):
 @bot.event
 async def on_ready():
     name, id = bot.user.name, bot.user.id
-    print('------\nLogged in with:\nUSER:%s\nID:%s\n------' % name, id))
+    print('------\nLogged in with:\nUSER:%s\nID:%s\n------' % (name, id))
 
 bot.run(token)
