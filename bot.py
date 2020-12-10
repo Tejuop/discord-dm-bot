@@ -3,7 +3,7 @@ import asyncio
 from discord.ext import commands
 
 token = '<your token!>'
-bot = commands.Bot(command_prefix='kk!') # Setting bot prefix to 'kk!'
+bot = commands.Bot(command_prefix='T!') # Setting bot prefix to 'kk!'
 # Send one dm!
 # Usage: 'kk!dm 0000000000000000 My Message To You!!'
 @bot.command()
@@ -22,7 +22,7 @@ async def spam(ctx, userid: int,*, dm: str):
         await ctx.send('DM send!')
 
 # Help!!!!
-# Usage: 'kk!nani'
+# Usage: 'T!nani'
 @bot.command()
 async def nani(ctx):
     embed = discord.Embed(
@@ -32,11 +32,11 @@ async def nani(ctx):
     )
     embed.add_field(
         name="kk!dm",
-        value='Send a DM! (kk!dm userid msg)'
+        value='Send a DM! (T!dm userid msg)'
     )
     embed.add_field(
         name="kk!spam",
-        value="Spam in DM's! (kk!spam userid msg)"
+        value="Spam in DM's! (T!spam userid msg)"
     )
     embed.add_field(
         name="kk!nani",
